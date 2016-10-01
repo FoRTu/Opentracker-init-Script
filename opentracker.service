@@ -1,0 +1,10 @@
+[Unit]
+Description=Bittorrent OpenTracker service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/full/path/of/binary/opentracker -f full/path/of/config/file/opentracker.conf -b black.list.file
+
+[Install]
+WantedBy=multi-user.target

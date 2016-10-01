@@ -17,12 +17,15 @@ CONF_FILE=/full/path/of/config/file
 # Opentracker binary // Ejecutable de Opentracker:
 BIN=/full/path/of/binary
 #
+# Black list file // Archivo de Black list
+BLACK_LIST=/full/path/of/the/file/black.list
+#
 ### End of Configuration // Fin de configuracion ###
 
 case "$1" in
   start)
                 echo -n "Starting Open Bittorrent Tracker ..."
-                $BIN -f $CONF_FILE > /dev/null &
+                $BIN -f $CONF_FILE -b $BLACK_LIST> /dev/null &
 		echo " [ OK ]"
                 echo "."
                 ;;
